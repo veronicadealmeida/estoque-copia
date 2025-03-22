@@ -27,14 +27,12 @@ public class ProdutoController {
 
     // listagem de produto
     @GetMapping
-    @CrossOrigin(origins = "allowedOriginPattern")
     public List<Produto> listarProdutos() {
         return service.listarProdutos();
     }
 
     // buscar produto por id
     @GetMapping({"/{id}"})
-    @CrossOrigin(origins = "*")
     public Produto buscarProdutoPorId(@PathVariable UUID id) {
         Optional<Produto> produto = service.buscarPdodutoPorId(id);
         return produto.orElse(null);
@@ -42,7 +40,6 @@ public class ProdutoController {
 
     // deletar produto
     @DeleteMapping("/{id}")
-    @CrossOrigin(origins = "*")
     @ResponseStatus( HttpStatus.NO_CONTENT)
     public void removerProduto(@PathVariable UUID id) {
         service.removerProduto(id);
@@ -50,7 +47,6 @@ public class ProdutoController {
 
     //calcular o valor total do estoque
     @GetMapping("/valor-total")
-    @CrossOrigin(origins = "*")
     public double calcularValorTotalEstoque(){
         return service.calcularValorTotalEstoque();
     }
