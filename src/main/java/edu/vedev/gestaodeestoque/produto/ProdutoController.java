@@ -10,6 +10,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/produtos")
 public class ProdutoController {
 
