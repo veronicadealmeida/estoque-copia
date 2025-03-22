@@ -10,7 +10,7 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/**")  // Altere conforme o seu endpoint
+        registry.addMapping("/estoque-copia-prd.up.railway.app/**")  // Altere conforme o seu endpoint
                 .allowedOrigins("https://swagger-ui-url.com", "http://localhost:8083", "http://localhost:8080","**/**")  // Adicione as origens necessárias
                 .allowedMethods("GET", "POST", "PUT", "DELETE")  // Métodos permitidos
                 .allowedHeaders("*")  // Cabeçalhos permitidos
