@@ -13,21 +13,6 @@ import org.springframework.web.filter.CorsFilter;
 @Configuration
 public class CorsConfig {
 
-    @Autowired
-
-    @Bean
-    public FilterRegistrationBean corsFilter() {
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-
-        final CorsConfiguration configAutenticacao = getCorsConfiguration();
-        // source.registerCorsConfiguration("/oauth/token", configAutenticacao);
-        source.registerCorsConfiguration("/**", configAutenticacao); // Global para todas as URLs da aplicação
-
-        FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
-        bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
-        return bean;
-    }
-
     private static CorsConfiguration getCorsConfiguration() {
         CorsConfiguration configAutenticacao = new CorsConfiguration();
         configAutenticacao.setAllowCredentials(true);
