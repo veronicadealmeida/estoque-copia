@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-
+@CrossOrigin
 @RestController
 @RequestMapping("/api/produtos")
 public class ProdutoController {
@@ -20,6 +20,7 @@ public class ProdutoController {
     @Autowired
     ProdutoRepository repository;
 
+    @CrossOrigin
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
     public ProdutoDTO create (@RequestBody ProdutoDTO produto) {
@@ -27,6 +28,7 @@ public class ProdutoController {
     }
 
     // listagem de produto
+    @CrossOrigin
     @GetMapping
     public List<Produto> listarProdutos() {
         return service.listarProdutos();
