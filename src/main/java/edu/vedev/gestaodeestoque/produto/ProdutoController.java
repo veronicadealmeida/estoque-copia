@@ -11,7 +11,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/produtos")
-
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class ProdutoController {
 
     @Autowired
