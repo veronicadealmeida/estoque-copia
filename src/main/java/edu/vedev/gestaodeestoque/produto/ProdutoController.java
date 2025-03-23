@@ -9,9 +9,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@CrossOrigin
 @RestController
 @RequestMapping("/api/produtos")
+@CrossOrigin(origins = "https://estoque-copia-prd.up.railway.app")
+
 public class ProdutoController {
 
     @Autowired
@@ -20,7 +21,6 @@ public class ProdutoController {
     @Autowired
     ProdutoRepository repository;
 
-    @CrossOrigin
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
     public ProdutoDTO create (@RequestBody ProdutoDTO produto) {
