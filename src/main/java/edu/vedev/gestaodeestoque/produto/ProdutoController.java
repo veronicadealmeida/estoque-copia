@@ -11,7 +11,6 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/produtos")
-@CrossOrigin(origins = "https://estoque-copia-prd.up.railway.app")
 
 public class ProdutoController {
 
@@ -28,7 +27,6 @@ public class ProdutoController {
     }
 
     // listagem de produto
-    @CrossOrigin
     @GetMapping
     public List<Produto> listarProdutos() {
         return service.listarProdutos();
